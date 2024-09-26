@@ -1,0 +1,57 @@
+public final class org/kompars/ktor/plugins/csp/ContentSecurityPolicyConfig {
+	public final fun baseUri (Lkotlin/jvm/functions/Function2;)V
+	public final fun childSrc (Lkotlin/jvm/functions/Function2;)V
+	public final fun connectSrc (Lkotlin/jvm/functions/Function2;)V
+	public final fun defaultSrc (Lkotlin/jvm/functions/Function2;)V
+	public final fun fontSrc (Lkotlin/jvm/functions/Function2;)V
+	public final fun formAction (Lkotlin/jvm/functions/Function2;)V
+	public final fun frameAncestors (Lkotlin/jvm/functions/Function2;)V
+	public final fun frameSrc (Lkotlin/jvm/functions/Function2;)V
+	public final fun imgSrc (Lkotlin/jvm/functions/Function2;)V
+	public final fun manifestSrc (Lkotlin/jvm/functions/Function2;)V
+	public final fun mediaSrc (Lkotlin/jvm/functions/Function2;)V
+	public final fun objectSrc (Lkotlin/jvm/functions/Function2;)V
+	public final fun prefetchSrc (Lkotlin/jvm/functions/Function2;)V
+	public final fun scriptSrc (Lkotlin/jvm/functions/Function2;)V
+	public final fun scriptSrcAttr (Lkotlin/jvm/functions/Function2;)V
+	public final fun scriptSrcElem (Lkotlin/jvm/functions/Function2;)V
+	public final fun styleSrc (Lkotlin/jvm/functions/Function2;)V
+	public final fun styleSrcAttr (Lkotlin/jvm/functions/Function2;)V
+	public final fun styleSrcElem (Lkotlin/jvm/functions/Function2;)V
+	public final fun workerSrc (Lkotlin/jvm/functions/Function2;)V
+}
+
+public final class org/kompars/ktor/plugins/csp/ContentSecurityPolicyKt {
+	public static final fun getCSP ()Lio/ktor/server/application/RouteScopedPlugin;
+	public static final fun getContentSecurityPolicy ()Lio/ktor/server/application/RouteScopedPlugin;
+}
+
+public final class org/kompars/ktor/plugins/csp/ContentSecurityPolicyNonceKt {
+	public static final fun getContentSecurityPolicyNonce (Lio/ktor/server/application/ApplicationCall;)Ljava/lang/String;
+	public static final fun getCspNonce (Lio/ktor/server/application/ApplicationCall;)Ljava/lang/String;
+}
+
+public final class org/kompars/ktor/plugins/csp/ContentSecurityPolicySourceBuilder {
+	public final fun generatedNonce ()V
+	public final fun host (Lio/ktor/http/Url;)V
+	public final fun host (Ljava/lang/String;)V
+	public final fun inlineSpeculationRules ()V
+	public final fun nonce (Ljava/lang/String;)V
+	public final fun none ()V
+	public final fun originPath (Ljava/lang/String;)V
+	public final fun reportSample ()V
+	public final fun scheme (Ljava/lang/String;)V
+	public final fun self ()V
+	public final fun sha256 (Ljava/lang/String;)V
+	public final fun sha256 ([B)V
+	public final fun sha384 (Ljava/lang/String;)V
+	public final fun sha384 ([B)V
+	public final fun sha512 (Ljava/lang/String;)V
+	public final fun sha512 ([B)V
+	public final fun strictDynamic ()V
+	public final fun unsafeEval ()V
+	public final fun unsafeHashes ()V
+	public final fun unsafeInline ()V
+	public final fun wasmUnsafeEval ()V
+}
+
