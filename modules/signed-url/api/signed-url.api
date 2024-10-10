@@ -1,0 +1,52 @@
+public abstract interface class org/kompars/ktor/plugins/signedurl/SignatureAlgorithm {
+	public abstract fun sign ([B)[B
+	public abstract fun verify ([B[B)Z
+}
+
+public final class org/kompars/ktor/plugins/signedurl/SignaturePrincipal {
+	public static final field INSTANCE Lorg/kompars/ktor/plugins/signedurl/SignaturePrincipal;
+	public fun equals (Ljava/lang/Object;)Z
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class org/kompars/ktor/plugins/signedurl/SignedUrlAuthenticationChallengeContext {
+	public final fun getCall ()Lio/ktor/server/application/ApplicationCall;
+}
+
+public final class org/kompars/ktor/plugins/signedurl/SignedUrlAuthenticationProvider : io/ktor/server/auth/AuthenticationProvider {
+	public fun onAuthenticate (Lio/ktor/server/auth/AuthenticationContext;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+}
+
+public final class org/kompars/ktor/plugins/signedurl/SignedUrlAuthenticationProviderConfig : io/ktor/server/auth/AuthenticationProvider$Config {
+	public field signer Lorg/kompars/ktor/plugins/signedurl/UrlSigner;
+	public final fun challenge (Lkotlin/jvm/functions/Function2;)V
+	public final fun getSigner ()Lorg/kompars/ktor/plugins/signedurl/UrlSigner;
+	public final fun setSigner (Lorg/kompars/ktor/plugins/signedurl/UrlSigner;)V
+	public final fun validate (Lkotlin/jvm/functions/Function3;)V
+}
+
+public final class org/kompars/ktor/plugins/signedurl/SignedUrlAuthenticationProviderKt {
+	public static final fun isSignedUrl (Lio/ktor/server/application/ApplicationCall;Ljava/lang/String;)Z
+	public static synthetic fun isSignedUrl$default (Lio/ktor/server/application/ApplicationCall;Ljava/lang/String;ILjava/lang/Object;)Z
+	public static final fun signedUrl (Lio/ktor/server/auth/AuthenticationConfig;Ljava/lang/String;Lkotlin/jvm/functions/Function1;)V
+	public static synthetic fun signedUrl$default (Lio/ktor/server/auth/AuthenticationConfig;Ljava/lang/String;Lkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
+}
+
+public final class org/kompars/ktor/plugins/signedurl/UrlSigner {
+	public fun <init> (Lorg/kompars/ktor/plugins/signedurl/SignatureAlgorithm;Ljava/lang/String;Ljava/lang/String;)V
+	public synthetic fun <init> (Lorg/kompars/ktor/plugins/signedurl/SignatureAlgorithm;Ljava/lang/String;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun hasSignature (Ljava/lang/String;)Z
+	public final fun sign (Ljava/lang/String;Lkotlinx/datetime/Instant;)Ljava/lang/String;
+	public static synthetic fun sign$default (Lorg/kompars/ktor/plugins/signedurl/UrlSigner;Ljava/lang/String;Lkotlinx/datetime/Instant;ILjava/lang/Object;)Ljava/lang/String;
+	public final fun sign-HG0u8IE (Ljava/lang/String;J)Ljava/lang/String;
+	public final fun verify (Ljava/lang/String;Lkotlinx/datetime/Instant;)Z
+	public static synthetic fun verify$default (Lorg/kompars/ktor/plugins/signedurl/UrlSigner;Ljava/lang/String;Lkotlinx/datetime/Instant;ILjava/lang/Object;)Z
+}
+
+public final class org/kompars/ktor/plugins/signedurl/algorithm/HmacSha256 : org/kompars/ktor/plugins/signedurl/SignatureAlgorithm {
+	public fun <init> ([B)V
+	public fun sign ([B)[B
+	public fun verify ([B[B)Z
+}
+

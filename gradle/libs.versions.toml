@@ -1,8 +1,10 @@
 [versions]
+cryptography = "0.4.0-SNAPSHOT"
 dokka = "1.9.20"
 git-versioning = "6.4.4"
 kotlin = "2.0.20"
 kotlinx-bcv = "0.16.3"
+kotlinx-datetime = "0.6.1"
 kotlinx-html = "0.11.0"
 ktor = "3.0.0"
 maven-publish = "0.29.0"
@@ -15,6 +17,8 @@ kotlinx-bcv = { id = "org.jetbrains.kotlinx.binary-compatibility-validator", ver
 maven-publish = { id = "com.vanniktech.maven.publish", version.ref = "maven-publish" }
 
 [libraries]
+cryptography-core = { module = "dev.whyoleg.cryptography:cryptography-core", version.ref = "cryptography" }
+kotlinx-datetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.ref = "kotlinx-datetime" }
 kotlinx-html = { module = "org.jetbrains.kotlinx:kotlinx-html", version.ref = "kotlinx-html" }
 ktor-server-core = { module = "io.ktor:ktor-server-core", version.ref = "ktor" }
 ktor-server-auth = { module = "io.ktor:ktor-server-auth", version.ref = "ktor" }
