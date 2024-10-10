@@ -1,0 +1,14 @@
+public final class org/kompars/ktor/plugins/baselayout/BaseLayoutConfig {
+	public final fun layout (Ljava/lang/String;Lkotlin/jvm/functions/Function3;)V
+	public static synthetic fun layout$default (Lorg/kompars/ktor/plugins/baselayout/BaseLayoutConfig;Ljava/lang/String;Lkotlin/jvm/functions/Function3;ILjava/lang/Object;)V
+}
+
+public final class org/kompars/ktor/plugins/baselayout/BaseLayoutKt {
+	public static final fun getBaseLayout ()Lio/ktor/server/application/RouteScopedPlugin;
+}
+
+public final class org/kompars/ktor/plugins/baselayout/ResponseKt {
+	public static final fun respondBaseLayout (Lio/ktor/server/application/ApplicationCall;Ljava/lang/String;Lio/ktor/http/HttpStatusCode;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public static synthetic fun respondBaseLayout$default (Lio/ktor/server/application/ApplicationCall;Ljava/lang/String;Lio/ktor/http/HttpStatusCode;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;ILjava/lang/Object;)Ljava/lang/Object;
+}
+
