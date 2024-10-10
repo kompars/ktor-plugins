@@ -1,0 +1,13 @@
+public final class org/kompars/ktor/plugins/transactions/CallWrapperContext {
+	public final fun getCall ()Lio/ktor/server/application/ApplicationCall;
+}
+
+public final class org/kompars/ktor/plugins/transactions/TransactionsConfig {
+	public final fun skipWhen (Lkotlin/jvm/functions/Function1;)V
+	public final fun wrap (Lkotlin/jvm/functions/Function3;)V
+}
+
+public final class org/kompars/ktor/plugins/transactions/TransactionsKt {
+	public static final fun getTransactions ()Lio/ktor/server/application/RouteScopedPlugin;
+}
+
