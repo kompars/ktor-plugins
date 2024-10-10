@@ -1,0 +1,17 @@
+public final class org/kompars/ktor/plugins/interceptor/InterceptorConfig {
+	public final fun intercept (Lkotlin/jvm/functions/Function2;)V
+}
+
+public final class org/kompars/ktor/plugins/interceptor/InterceptorContext {
+	public final fun getCall ()Lio/ktor/server/routing/RoutingPipelineCall;
+}
+
+public final class org/kompars/ktor/plugins/interceptor/InterceptorKt {
+	public static final fun getInterceptor ()Lio/ktor/server/application/RouteScopedPlugin;
+}
+
+public final class org/kompars/ktor/plugins/interceptor/RouteKt {
+	public static final fun intercept (Lio/ktor/server/routing/Route;Lkotlin/jvm/functions/Function2;)V
+	public static final fun route (Lio/ktor/server/routing/Route;Lkotlin/jvm/functions/Function1;)Lio/ktor/server/routing/Route;
+}
+

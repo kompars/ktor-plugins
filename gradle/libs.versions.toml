@@ -15,3 +15,4 @@ maven-publish = { id = "com.vanniktech.maven.publish", version.ref = "maven-publ
 
 [libraries]
 ktor-server-core = { module = "io.ktor:ktor-server-core", version.ref = "ktor" }
+ktor-server-auth = { module = "io.ktor:ktor-server-auth", version.ref = "ktor" }
