@@ -56,6 +56,7 @@ public fun OpenIdConnectConfig.rauthy(url: String) {
 public class OpenIdConnectSessionConfig internal constructor() {
     public var storage: SessionStorage = SessionStorageMemory()
     public var cookieName: String = "SessionId"
+    public var cookieSecure: Boolean = true
 
     internal val provider: OpenIdConnectSessionProvider by lazy { OpenIdConnectSessionProvider(storage) }
 }

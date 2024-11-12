@@ -6,6 +6,7 @@ import io.ktor.client.statement.*
 import io.ktor.http.*
 import io.ktor.server.application.*
 import io.ktor.server.auth.*
+import io.ktor.server.plugins.*
 import io.ktor.server.request.*
 import io.ktor.server.response.*
 import io.ktor.server.routing.*
@@ -81,7 +82,7 @@ public val OpenIdConnect: ApplicationPlugin<OpenIdConnectConfig> = createApplica
                     call.response.cookies.append(
                         name = config.session.cookieName,
                         value = sessionId,
-                        secure = true,
+                        secure = config.session.cookieSecure,
                         httpOnly = true,
                         path = "/",
                         extensions = mapOf("SameSite" to "Lax"),
