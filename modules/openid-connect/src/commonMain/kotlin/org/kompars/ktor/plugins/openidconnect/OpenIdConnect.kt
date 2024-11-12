@@ -10,6 +10,7 @@ import io.ktor.server.request.*
 import io.ktor.server.response.*
 import io.ktor.server.routing.*
 import io.ktor.server.util.*
+import io.ktor.util.*
 import kotlinx.serialization.json.*
 
 internal const val OAUTH_PROVIDER = "openid-connect-oauth-provider"
@@ -32,8 +33,8 @@ public val OpenIdConnect: ApplicationPlugin<OpenIdConnectConfig> = createApplica
             providerLookup = {
                 OAuthServerSettings.OAuth2ServerSettings(
                     name = OAUTH_PROVIDER,
-                    authorizeUrl = "${config.issuer}/protocol/openid-connect/auth",
-                    accessTokenUrl = "${config.issuer}/protocol/openid-connect/token",
+                    authorizeUrl = config.authorizationUrl,
+                    accessTokenUrl = config.tokenUrl,
                     clientId = config.clientId,
                     clientSecret = config.clientSecret,
                     defaultScopes = listOf("openid") + config.scopes,
@@ -62,7 +63,7 @@ public val OpenIdConnect: ApplicationPlugin<OpenIdConnectConfig> = createApplica
                         expiresIn = tokenResponse.expiresIn,
                     )
 
-                    val userInfoResponse = config.httpClient.get("${config.issuer}/protocol/openid-connect/userinfo") {
+                    val userInfoResponse = config.httpClient.get(config.userInfoUrl) {
                         expectSuccess = true
                         headers.append("Authorization", "Bearer ${tokenResponse.accessToken}")
                     }
@@ -72,7 +73,7 @@ public val OpenIdConnect: ApplicationPlugin<OpenIdConnectConfig> = createApplica
                         .let { UserInfo(it.jsonObject) }
 
                     val session = OpenIdConnectSession(tokens, userInfo)
-                    val sessionId = parseJwt(tokens.idToken)["sid"]!!.jsonPrimitive.content
+                    val sessionId = parseJwt(tokens.idToken)["sid"]?.jsonPrimitive?.content ?: generateNonce()
 
                     config.onLogin(call, session)
                     config.session.provider.set(sessionId, session)
@@ -94,7 +95,7 @@ public val OpenIdConnect: ApplicationPlugin<OpenIdConnectConfig> = createApplica
                 when (val session = call.getOpenIdConnectSession()) {
                     null -> call.respondRedirect(config.postLogoutUrl)
                     else -> call.respondRedirect {
-                        takeFrom("${config.issuer}/protocol/openid-connect/logout")
+                        takeFrom(config.endSessionUrl)
                         parameters["id_token_hint"] = session.tokens.idToken
                         parameters["post_logout_redirect_uri"] = call.url {
                             path("${config.path}/logout")

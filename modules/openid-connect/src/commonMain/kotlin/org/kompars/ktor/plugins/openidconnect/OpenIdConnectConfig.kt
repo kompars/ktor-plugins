@@ -11,6 +11,12 @@ public class OpenIdConnectConfig internal constructor() {
     public lateinit var issuer: String
     public lateinit var clientId: String
     public lateinit var clientSecret: String
+
+    public lateinit var authorizationUrl: String
+    public lateinit var tokenUrl: String
+    public lateinit var userInfoUrl: String
+    public lateinit var endSessionUrl: String
+
     public var scopes: Set<String> = emptySet()
 
     public var httpClient: HttpClient = HttpClient()
@@ -29,6 +35,22 @@ public class OpenIdConnectConfig internal constructor() {
     public fun session(block: OpenIdConnectSessionConfig.() -> Unit) {
         session.apply(block)
     }
+}
+
+public fun OpenIdConnectConfig.keycloak(url: String) {
+    issuer = url
+    authorizationUrl = "$url/protocol/openid-connect/auth"
+    tokenUrl = "$url/protocol/openid-connect/token"
+    userInfoUrl = "$url/protocol/openid-connect/userinfo"
+    endSessionUrl = "$url/protocol/openid-connect/logout"
+}
+
+public fun OpenIdConnectConfig.rauthy(url: String) {
+    issuer = "$url/auth/v1"
+    authorizationUrl = "$url/auth/v1/oidc/authorize"
+    tokenUrl = "$url/auth/v1/oidc/token"
+    userInfoUrl = "$url/auth/v1/oidc/userinfo"
+    endSessionUrl = "$url/auth/v1/oidc/logout"
 }
 
 public class OpenIdConnectSessionConfig internal constructor() {
