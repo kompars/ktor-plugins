@@ -15,6 +15,7 @@ public suspend fun ApplicationCall.respondBaseLayout(
     val layoutBuilder = attributes[BaseLayoutRegistry].getValue(layout)
 
     val html = buildString {
+        appendLine("<!DOCTYPE html>")
         appendHTML().html { layoutBuilder(this@respondBaseLayout, block) }
     }
 
