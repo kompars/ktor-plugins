@@ -6,7 +6,6 @@ plugins {
 
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
-include("modules:base-layout")
 include("modules:content-security-policy")
 include("modules:interceptor")
 include("modules:openid-connect")
