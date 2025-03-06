@@ -1,0 +1,158 @@
+public final class org/kompars/ktor/plugins/openidconnect/OpenIdConnectAuthenticationChallengeContext {
+	public final fun getCall ()Lio/ktor/server/application/ApplicationCall;
+}
+
+public final class org/kompars/ktor/plugins/openidconnect/OpenIdConnectAuthenticationProvider : io/ktor/server/auth/AuthenticationProvider {
+	public fun onAuthenticate (Lio/ktor/server/auth/AuthenticationContext;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+}
+
+public final class org/kompars/ktor/plugins/openidconnect/OpenIdConnectAuthenticationProviderConfig : io/ktor/server/auth/AuthenticationProvider$Config {
+	public final fun challenge (Lkotlin/jvm/functions/Function2;)V
+	public final fun validate (Lkotlin/jvm/functions/Function3;)V
+}
+
+public final class org/kompars/ktor/plugins/openidconnect/OpenIdConnectAuthenticationProviderKt {
+	public static final fun openIdConnect (Lio/ktor/server/auth/AuthenticationConfig;Ljava/lang/String;Lkotlin/jvm/functions/Function1;)V
+	public static synthetic fun openIdConnect$default (Lio/ktor/server/auth/AuthenticationConfig;Ljava/lang/String;Lkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
+}
+
+public final class org/kompars/ktor/plugins/openidconnect/OpenIdConnectConfig {
+	public field authorizationUrl Ljava/lang/String;
+	public field clientId Ljava/lang/String;
+	public field clientSecret Ljava/lang/String;
+	public field endSessionUrl Ljava/lang/String;
+	public field issuer Ljava/lang/String;
+	public field tokenUrl Ljava/lang/String;
+	public field userInfoUrl Ljava/lang/String;
+	public final fun getAuthorizationUrl ()Ljava/lang/String;
+	public final fun getClientId ()Ljava/lang/String;
+	public final fun getClientSecret ()Ljava/lang/String;
+	public final fun getEndSessionUrl ()Ljava/lang/String;
+	public final fun getHttpClient ()Lio/ktor/client/HttpClient;
+	public final fun getIssuer ()Ljava/lang/String;
+	public final fun getPath ()Ljava/lang/String;
+	public final fun getPostLoginUrl ()Ljava/lang/String;
+	public final fun getPostLogoutUrl ()Ljava/lang/String;
+	public final fun getScopes ()Ljava/util/Set;
+	public final fun getSession ()Lorg/kompars/ktor/plugins/openidconnect/OpenIdConnectSessionConfig;
+	public final fun getTokenUrl ()Ljava/lang/String;
+	public final fun getUserInfoUrl ()Ljava/lang/String;
+	public final fun onLogin (Lkotlin/jvm/functions/Function3;)V
+	public final fun session (Lkotlin/jvm/functions/Function1;)V
+	public final fun setAuthorizationUrl (Ljava/lang/String;)V
+	public final fun setClientId (Ljava/lang/String;)V
+	public final fun setClientSecret (Ljava/lang/String;)V
+	public final fun setEndSessionUrl (Ljava/lang/String;)V
+	public final fun setHttpClient (Lio/ktor/client/HttpClient;)V
+	public final fun setIssuer (Ljava/lang/String;)V
+	public final fun setPath (Ljava/lang/String;)V
+	public final fun setPostLoginUrl (Ljava/lang/String;)V
+	public final fun setPostLogoutUrl (Ljava/lang/String;)V
+	public final fun setScopes (Ljava/util/Set;)V
+	public final fun setTokenUrl (Ljava/lang/String;)V
+	public final fun setUserInfoUrl (Ljava/lang/String;)V
+}
+
+public final class org/kompars/ktor/plugins/openidconnect/OpenIdConnectConfigKt {
+	public static final fun keycloak (Lorg/kompars/ktor/plugins/openidconnect/OpenIdConnectConfig;Ljava/lang/String;)V
+	public static final fun rauthy (Lorg/kompars/ktor/plugins/openidconnect/OpenIdConnectConfig;Ljava/lang/String;)V
+}
+
+public final class org/kompars/ktor/plugins/openidconnect/OpenIdConnectKt {
+	public static final fun getOpenIdConnect ()Lio/ktor/server/application/ApplicationPlugin;
+}
+
+public final class org/kompars/ktor/plugins/openidconnect/OpenIdConnectSession {
+	public static final field Companion Lorg/kompars/ktor/plugins/openidconnect/OpenIdConnectSession$Companion;
+	public fun <init> (Lorg/kompars/ktor/plugins/openidconnect/Tokens;Lorg/kompars/ktor/plugins/openidconnect/UserInfo;)V
+	public final fun getTokens ()Lorg/kompars/ktor/plugins/openidconnect/Tokens;
+	public final fun getUserInfo ()Lorg/kompars/ktor/plugins/openidconnect/UserInfo;
+}
+
+public synthetic class org/kompars/ktor/plugins/openidconnect/OpenIdConnectSession$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Lorg/kompars/ktor/plugins/openidconnect/OpenIdConnectSession$$serializer;
+	public final fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+	public final fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Lorg/kompars/ktor/plugins/openidconnect/OpenIdConnectSession;
+	public final fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public final fun serialize (Lkotlinx/serialization/encoding/Encoder;Lorg/kompars/ktor/plugins/openidconnect/OpenIdConnectSession;)V
+}
+
+public final class org/kompars/ktor/plugins/openidconnect/OpenIdConnectSession$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
+public final class org/kompars/ktor/plugins/openidconnect/OpenIdConnectSessionConfig {
+	public final fun getCookieName ()Ljava/lang/String;
+	public final fun getCookieSecure ()Z
+	public final fun getStorage ()Lio/ktor/server/sessions/SessionStorage;
+	public final fun setCookieName (Ljava/lang/String;)V
+	public final fun setCookieSecure (Z)V
+	public final fun setStorage (Lio/ktor/server/sessions/SessionStorage;)V
+}
+
+public final class org/kompars/ktor/plugins/openidconnect/OpenIdConnectSessionKt {
+	public static final fun getEmail (Lorg/kompars/ktor/plugins/openidconnect/UserInfo;)Ljava/lang/String;
+	public static final fun getName (Lorg/kompars/ktor/plugins/openidconnect/UserInfo;)Ljava/lang/String;
+}
+
+public final class org/kompars/ktor/plugins/openidconnect/OpenIdConnectSessionProvider {
+	public final fun get (Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public final fun set (Ljava/lang/String;Lorg/kompars/ktor/plugins/openidconnect/OpenIdConnectSession;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+}
+
+public final class org/kompars/ktor/plugins/openidconnect/Tokens {
+	public static final field Companion Lorg/kompars/ktor/plugins/openidconnect/Tokens$Companion;
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;J)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Ljava/lang/String;
+	public final fun component3 ()Ljava/lang/String;
+	public final fun component4 ()Ljava/lang/String;
+	public final fun component5 ()J
+	public final fun copy (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;J)Lorg/kompars/ktor/plugins/openidconnect/Tokens;
+	public static synthetic fun copy$default (Lorg/kompars/ktor/plugins/openidconnect/Tokens;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;JILjava/lang/Object;)Lorg/kompars/ktor/plugins/openidconnect/Tokens;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getAccessToken ()Ljava/lang/String;
+	public final fun getExpiresIn ()J
+	public final fun getIdToken ()Ljava/lang/String;
+	public final fun getRefreshToken ()Ljava/lang/String;
+	public final fun getTokenType ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public synthetic class org/kompars/ktor/plugins/openidconnect/Tokens$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Lorg/kompars/ktor/plugins/openidconnect/Tokens$$serializer;
+	public final fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+	public final fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Lorg/kompars/ktor/plugins/openidconnect/Tokens;
+	public final fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public final fun serialize (Lkotlinx/serialization/encoding/Encoder;Lorg/kompars/ktor/plugins/openidconnect/Tokens;)V
+}
+
+public final class org/kompars/ktor/plugins/openidconnect/Tokens$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
+public final class org/kompars/ktor/plugins/openidconnect/UserInfo {
+	public static final field Companion Lorg/kompars/ktor/plugins/openidconnect/UserInfo$Companion;
+	public fun <init> (Lkotlinx/serialization/json/JsonObject;)V
+	public final fun getJson ()Lkotlinx/serialization/json/JsonObject;
+}
+
+public synthetic class org/kompars/ktor/plugins/openidconnect/UserInfo$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Lorg/kompars/ktor/plugins/openidconnect/UserInfo$$serializer;
+	public final fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+	public final fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Lorg/kompars/ktor/plugins/openidconnect/UserInfo;
+	public final fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public final fun serialize (Lkotlinx/serialization/encoding/Encoder;Lorg/kompars/ktor/plugins/openidconnect/UserInfo;)V
+}
+
+public final class org/kompars/ktor/plugins/openidconnect/UserInfo$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
