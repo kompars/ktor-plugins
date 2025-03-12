@@ -9,8 +9,11 @@ import kotlinx.html.*
 import kotlinx.html.attributes.*
 import kotlinx.html.stream.*
 
-private val turboFrameLoadingAttribute = EnumAttribute(TurboFrameLoading.entries.associateBy { it.realValue })
 private val turboActionAttribute = EnumAttribute(TurboAction.entries.associateBy { it.realValue })
+private val turboFrameLoadingAttribute = EnumAttribute(TurboFrameLoading.entries.associateBy { it.realValue })
+private val turboFrameRefreshAttribute = EnumAttribute(TurboFrameRefresh.entries.associateBy { it.realValue })
+private val turboFrameAutoScrollBlockAttribute = EnumAttribute(TurboFrameAutoScrollBlock.entries.associateBy { it.realValue })
+private val turboFrameAutoScrollBehaviorAttribute = EnumAttribute(TurboFrameAutoScrollBehavior.entries.associateBy { it.realValue })
 
 private const val TURBO_FRAME_HEADER_NAME: String = "Turbo-Frame"
 
@@ -43,6 +46,26 @@ public enum class TurboAction(override val realValue: String) : AttributeEnum {
 public enum class TurboFrameLoading(override val realValue: String) : AttributeEnum {
     eager("eager"),
     lazy("lazy"),
+}
+
+@Suppress("EnumEntryName")
+public enum class TurboFrameRefresh(override val realValue: String) : AttributeEnum {
+    replace("replace"),
+    morph("morph"),
+}
+
+@Suppress("EnumEntryName")
+public enum class TurboFrameAutoScrollBlock(override val realValue: String) : AttributeEnum {
+    end("end"),
+    start("start"),
+    center("center"),
+    nearest("nearest"),
+}
+
+@Suppress("EnumEntryName")
+public enum class TurboFrameAutoScrollBehavior(override val realValue: String) : AttributeEnum {
+    auto("auto"),
+    smooth("smooth"),
 }
 
 public class TurboFrame(
@@ -81,21 +104,39 @@ public var TurboFrame.loading: TurboFrameLoading
     }
 
 public var TurboFrame.disabled: Boolean
-    get() = booleanAttribute[this, "disabled"]
+    get() = tickerAttribute[this, "disabled"]
     set(disabled) {
-        booleanAttribute[this, "disabled"] = disabled
+        tickerAttribute[this, "disabled"] = disabled
     }
 
-public var TurboFrame.autoScroll: Boolean
-    get() = booleanAttribute[this, "autoscroll"]
-    set(autoscroll) {
-        booleanAttribute[this, "autoscroll"] = autoscroll
+public var TurboFrame.refresh: TurboFrameRefresh
+    get() = turboFrameRefreshAttribute[this, "refresh"]
+    set(refresh) {
+        turboFrameRefreshAttribute[this, "refresh"] = refresh
     }
 
 public var TurboFrame.turboAction: TurboAction
     get() = turboActionAttribute[this, "data-turbo-action"]
     set(turboAction) {
         turboActionAttribute[this, "data-turbo-action"] = turboAction
+    }
+
+public var TurboFrame.autoScroll: Boolean
+    get() = booleanAttribute[this, "autoscroll"]
+    set(autoScroll) {
+        booleanAttribute[this, "autoscroll"] = autoScroll
+    }
+
+public var TurboFrame.autoScrollBlock: TurboFrameAutoScrollBlock
+    get() = turboFrameAutoScrollBlockAttribute[this, "data-autoscroll-block"]
+    set(autoScrollBlock) {
+        turboFrameAutoScrollBlockAttribute[this, "data-autoscroll-block"] = autoScrollBlock
+    }
+
+public var TurboFrame.autoScrollBehavior: TurboFrameAutoScrollBehavior
+    get() = turboFrameAutoScrollBehaviorAttribute[this, "data-autoscroll-behavior"]
+    set(autoScrollBehavior) {
+        turboFrameAutoScrollBehaviorAttribute[this, "data-autoscroll-behavior"] = autoScrollBehavior
     }
 
 public inline fun FlowContent.turboFrame(id: String? = null, crossinline block: TurboFrame.() -> Unit) {

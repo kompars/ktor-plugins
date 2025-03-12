@@ -4,6 +4,7 @@ import io.ktor.http.*
 import io.ktor.server.application.*
 import io.ktor.server.request.*
 import io.ktor.server.response.*
+import io.ktor.server.sse.*
 import io.ktor.utils.io.charsets.*
 import kotlinx.html.*
 import kotlinx.html.stream.*
@@ -28,6 +29,13 @@ public suspend fun ApplicationCall.respondTurboStream(
         status = status,
         text = buildTurboStream(block),
     )
+}
+
+public suspend fun ServerSSESession.sendTurboStream(
+    id: String? = null,
+    block: TurboStreamBuilder.() -> Unit,
+) {
+    send(id = id, data = buildTurboStream(block))
 }
 
 public class TurboStream(

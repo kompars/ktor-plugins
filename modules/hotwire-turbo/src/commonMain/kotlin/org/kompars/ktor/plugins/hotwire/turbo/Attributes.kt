@@ -4,3 +4,4 @@ import kotlinx.html.attributes.*
 
 internal val stringAttribute = StringAttribute()
 internal val booleanAttribute = BooleanAttribute()
+internal val tickerAttribute = TickerAttribute()
