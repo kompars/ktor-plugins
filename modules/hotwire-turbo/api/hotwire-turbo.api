@@ -1,3 +1,8 @@
+public final class org/kompars/ktor/plugins/hotwire/turbo/TemplateKt {
+	public static final fun template (Lkotlinx/html/FlowContent;Ljava/lang/String;Lkotlin/jvm/functions/Function1;)V
+	public static synthetic fun template$default (Lkotlinx/html/FlowContent;Ljava/lang/String;Lkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
+}
+
 public final class org/kompars/ktor/plugins/hotwire/turbo/TurboAction : java/lang/Enum, kotlinx/html/AttributeEnum {
 	public static final field advance Lorg/kompars/ktor/plugins/hotwire/turbo/TurboAction;
 	public static final field replace Lorg/kompars/ktor/plugins/hotwire/turbo/TurboAction;
@@ -35,11 +40,34 @@ public final class org/kompars/ktor/plugins/hotwire/turbo/TurboFrame : kotlinx/h
 	public synthetic fun <init> (Lkotlinx/html/TagConsumer;Ljava/util/Map;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 }
 
+public final class org/kompars/ktor/plugins/hotwire/turbo/TurboFrameAutoScrollBehavior : java/lang/Enum, kotlinx/html/AttributeEnum {
+	public static final field auto Lorg/kompars/ktor/plugins/hotwire/turbo/TurboFrameAutoScrollBehavior;
+	public static final field smooth Lorg/kompars/ktor/plugins/hotwire/turbo/TurboFrameAutoScrollBehavior;
+	public static fun getEntries ()Lkotlin/enums/EnumEntries;
+	public fun getRealValue ()Ljava/lang/String;
+	public static fun valueOf (Ljava/lang/String;)Lorg/kompars/ktor/plugins/hotwire/turbo/TurboFrameAutoScrollBehavior;
+	public static fun values ()[Lorg/kompars/ktor/plugins/hotwire/turbo/TurboFrameAutoScrollBehavior;
+}
+
+public final class org/kompars/ktor/plugins/hotwire/turbo/TurboFrameAutoScrollBlock : java/lang/Enum, kotlinx/html/AttributeEnum {
+	public static final field center Lorg/kompars/ktor/plugins/hotwire/turbo/TurboFrameAutoScrollBlock;
+	public static final field end Lorg/kompars/ktor/plugins/hotwire/turbo/TurboFrameAutoScrollBlock;
+	public static final field nearest Lorg/kompars/ktor/plugins/hotwire/turbo/TurboFrameAutoScrollBlock;
+	public static final field start Lorg/kompars/ktor/plugins/hotwire/turbo/TurboFrameAutoScrollBlock;
+	public static fun getEntries ()Lkotlin/enums/EnumEntries;
+	public fun getRealValue ()Ljava/lang/String;
+	public static fun valueOf (Ljava/lang/String;)Lorg/kompars/ktor/plugins/hotwire/turbo/TurboFrameAutoScrollBlock;
+	public static fun values ()[Lorg/kompars/ktor/plugins/hotwire/turbo/TurboFrameAutoScrollBlock;
+}
+
 public final class org/kompars/ktor/plugins/hotwire/turbo/TurboFrameKt {
 	public static final fun getAutoScroll (Lorg/kompars/ktor/plugins/hotwire/turbo/TurboFrame;)Z
+	public static final fun getAutoScrollBehavior (Lorg/kompars/ktor/plugins/hotwire/turbo/TurboFrame;)Lorg/kompars/ktor/plugins/hotwire/turbo/TurboFrameAutoScrollBehavior;
+	public static final fun getAutoScrollBlock (Lorg/kompars/ktor/plugins/hotwire/turbo/TurboFrame;)Lorg/kompars/ktor/plugins/hotwire/turbo/TurboFrameAutoScrollBlock;
 	public static final fun getDisabled (Lorg/kompars/ktor/plugins/hotwire/turbo/TurboFrame;)Z
 	public static final fun getId (Lorg/kompars/ktor/plugins/hotwire/turbo/TurboFrame;)Ljava/lang/String;
 	public static final fun getLoading (Lorg/kompars/ktor/plugins/hotwire/turbo/TurboFrame;)Lorg/kompars/ktor/plugins/hotwire/turbo/TurboFrameLoading;
+	public static final fun getRefresh (Lorg/kompars/ktor/plugins/hotwire/turbo/TurboFrame;)Lorg/kompars/ktor/plugins/hotwire/turbo/TurboFrameRefresh;
 	public static final fun getSrc (Lorg/kompars/ktor/plugins/hotwire/turbo/TurboFrame;)Ljava/lang/String;
 	public static final fun getTarget (Lorg/kompars/ktor/plugins/hotwire/turbo/TurboFrame;)Ljava/lang/String;
 	public static final fun getTurboAction (Lkotlinx/html/A;)Lorg/kompars/ktor/plugins/hotwire/turbo/TurboAction;
@@ -50,9 +78,12 @@ public final class org/kompars/ktor/plugins/hotwire/turbo/TurboFrameKt {
 	public static final fun respondTurboFrame (Lio/ktor/server/application/ApplicationCall;Ljava/lang/String;Lio/ktor/http/HttpStatusCode;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 	public static synthetic fun respondTurboFrame$default (Lio/ktor/server/application/ApplicationCall;Ljava/lang/String;Lio/ktor/http/HttpStatusCode;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;ILjava/lang/Object;)Ljava/lang/Object;
 	public static final fun setAutoScroll (Lorg/kompars/ktor/plugins/hotwire/turbo/TurboFrame;Z)V
+	public static final fun setAutoScrollBehavior (Lorg/kompars/ktor/plugins/hotwire/turbo/TurboFrame;Lorg/kompars/ktor/plugins/hotwire/turbo/TurboFrameAutoScrollBehavior;)V
+	public static final fun setAutoScrollBlock (Lorg/kompars/ktor/plugins/hotwire/turbo/TurboFrame;Lorg/kompars/ktor/plugins/hotwire/turbo/TurboFrameAutoScrollBlock;)V
 	public static final fun setDisabled (Lorg/kompars/ktor/plugins/hotwire/turbo/TurboFrame;Z)V
 	public static final fun setId (Lorg/kompars/ktor/plugins/hotwire/turbo/TurboFrame;Ljava/lang/String;)V
 	public static final fun setLoading (Lorg/kompars/ktor/plugins/hotwire/turbo/TurboFrame;Lorg/kompars/ktor/plugins/hotwire/turbo/TurboFrameLoading;)V
+	public static final fun setRefresh (Lorg/kompars/ktor/plugins/hotwire/turbo/TurboFrame;Lorg/kompars/ktor/plugins/hotwire/turbo/TurboFrameRefresh;)V
 	public static final fun setSrc (Lorg/kompars/ktor/plugins/hotwire/turbo/TurboFrame;Ljava/lang/String;)V
 	public static final fun setTarget (Lorg/kompars/ktor/plugins/hotwire/turbo/TurboFrame;Ljava/lang/String;)V
 	public static final fun setTurboAction (Lkotlinx/html/A;Lorg/kompars/ktor/plugins/hotwire/turbo/TurboAction;)V
@@ -72,6 +103,15 @@ public final class org/kompars/ktor/plugins/hotwire/turbo/TurboFrameLoading : ja
 	public fun getRealValue ()Ljava/lang/String;
 	public static fun valueOf (Ljava/lang/String;)Lorg/kompars/ktor/plugins/hotwire/turbo/TurboFrameLoading;
 	public static fun values ()[Lorg/kompars/ktor/plugins/hotwire/turbo/TurboFrameLoading;
+}
+
+public final class org/kompars/ktor/plugins/hotwire/turbo/TurboFrameRefresh : java/lang/Enum, kotlinx/html/AttributeEnum {
+	public static final field morph Lorg/kompars/ktor/plugins/hotwire/turbo/TurboFrameRefresh;
+	public static final field replace Lorg/kompars/ktor/plugins/hotwire/turbo/TurboFrameRefresh;
+	public static fun getEntries ()Lkotlin/enums/EnumEntries;
+	public fun getRealValue ()Ljava/lang/String;
+	public static fun valueOf (Ljava/lang/String;)Lorg/kompars/ktor/plugins/hotwire/turbo/TurboFrameRefresh;
+	public static fun values ()[Lorg/kompars/ktor/plugins/hotwire/turbo/TurboFrameRefresh;
 }
 
 public final class org/kompars/ktor/plugins/hotwire/turbo/TurboRefreshMethod : java/lang/Enum, kotlinx/html/AttributeEnum {
@@ -123,6 +163,8 @@ public final class org/kompars/ktor/plugins/hotwire/turbo/TurboStreamKt {
 	public static final fun isTurboStream (Lio/ktor/server/request/ApplicationRequest;)Z
 	public static final fun respondTurboStream (Lio/ktor/server/application/ApplicationCall;Lio/ktor/http/HttpStatusCode;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 	public static synthetic fun respondTurboStream$default (Lio/ktor/server/application/ApplicationCall;Lio/ktor/http/HttpStatusCode;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;ILjava/lang/Object;)Ljava/lang/Object;
+	public static final fun sendTurboStream (Lio/ktor/server/sse/ServerSSESession;Ljava/lang/String;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public static synthetic fun sendTurboStream$default (Lio/ktor/server/sse/ServerSSESession;Ljava/lang/String;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;ILjava/lang/Object;)Ljava/lang/Object;
 	public static final fun setAction (Lorg/kompars/ktor/plugins/hotwire/turbo/TurboStream;Ljava/lang/String;)V
 	public static final fun setSrc (Lorg/kompars/ktor/plugins/hotwire/turbo/TurboStreamSource;Ljava/lang/String;)V
 	public static final fun setTarget (Lorg/kompars/ktor/plugins/hotwire/turbo/TurboStream;Ljava/lang/String;)V
