@@ -4,7 +4,6 @@ dokka = "2.0.0"
 git-versioning = "6.4.4"
 kotlin = "2.2.0"
 kotlinx-bcv = "0.18.0"
-kotlinx-datetime = "0.7.0-0.6.x-compat"
 kotlinx-html = "0.12.0"
 kotlinx-serialization = "1.8.1"
 ktor = "3.2.0"
@@ -20,7 +19,6 @@ maven-publish = { id = "com.vanniktech.maven.publish", version.ref = "maven-publ
 
 [libraries]
 cryptography-core = { module = "dev.whyoleg.cryptography:cryptography-core", version.ref = "cryptography" }
-kotlinx-datetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.ref = "kotlinx-datetime" }
 kotlinx-html = { module = "org.jetbrains.kotlinx:kotlinx-html", version.ref = "kotlinx-html" }
 kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinx-serialization" }
 ktor-server-auth = { module = "io.ktor:ktor-server-auth", version.ref = "ktor" }

@@ -2,7 +2,6 @@ package org.kompars.ktor.plugins.signedurl
 
 import io.ktor.http.*
 import kotlin.time.*
-import kotlinx.datetime.*
 
 public interface SignatureAlgorithm {
     public fun sign(data: ByteArray): ByteArray

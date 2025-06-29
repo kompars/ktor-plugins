@@ -11,6 +11,10 @@ kotlin {
     jvmToolchain(11)
     explicitApi()
 
+    compilerOptions {
+        optIn = listOf("kotlin.time.ExperimentalTime")
+    }
+
     jvm()
     linuxX64()
     linuxArm64()
@@ -18,7 +22,6 @@ kotlin {
     sourceSets {
         commonMain.dependencies {
             implementation(libs.cryptography.core)
-            implementation(libs.kotlinx.datetime)
             implementation(libs.ktor.server.core)
             implementation(libs.ktor.server.auth)
         }
